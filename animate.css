@@ -10,7 +10,7 @@ section:nth-of-type(2n){background-color:#eee;}
 /* Animated Bar */
  #wrapper>div{
     height:100%;
-    background-color:green;
+    background-color:rgb(64, 43, 179);
     animation-name:loading;
     animation-duration: 3s;
     }
@@ -23,6 +23,61 @@ section:nth-of-type(2n){background-color:#eee;}
 /* Progress Circle Animation using CSS only */ 
 /*         Add jsFiddle CSS code here       */
 
+.wrapperCircle {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  clip: rect(0px, 100px, 100px, 50px);
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border: 10px solid rgb(160, 46, 167);
+  border-radius: 50px;
+  position: absolute;
+  clip: rect(0px, 50px, 100px, 0px);
+}
+
+div[data-anim~=base] {
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+}
+
+.wrapperCircle[data-anim~=wrapper]{
+  -webkit-animation-duration: 0.01s;
+  -webkit-animation-delay: 3s;
+  -webkit-animation-name: close-wrapper;
+}
+
+.circle[data-anim~=left]{
+  -webkit-animation-duration: 6s;
+  -webkit-animation-name: left-spin;
+}
+
+.circle[data-anim~=right]{
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: right-spin;
+}
+
+@keyframes right-spin {
+  from { -webkit-transform: rotate(0deg);
+  }
+  to { -webkit-transform: rotate(180deg);
+  }
+}
+@keyframes left-spin {
+  from { -webkit-transform: rotate(0deg);
+  }
+  to {-webkit-transform: rotate(360deg);
+  }
+}
+@keyframes close-wrapper {
+  to {
+    clip: rect(auto, auto, auto, auto);
+  }
+}
 
 /* ***************************************** */
 /* Progress Circle Animation using SVG */ 
