@@ -3,18 +3,23 @@ section:nth-of-type(2n){background-color:#eee;}
 /* ************************************* */
 /* Progress Bar Animation using CSS only */
 /*        Edit the Animation code        */
+
  #wrapper{
     width:200px;height:25px;
     position:relative;
     border:solid thin black;}
+
 /* Animated Bar */
+
  #wrapper>div{
     height:100%;
     background-color:rgb(64, 43, 179);
     animation-name:loading;
     animation-duration: 3s;
     }
+
 /* Animation */
+
   @keyframes loading {
     from { width: 0%; }
     to   { width: 100%; }
@@ -83,6 +88,14 @@ div[data-anim~=base] {
 /* Progress Circle Animation using SVG */ 
 /*         Add CodePen CSS code here        */
 
+.percentage {
+  text-align:center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+svg {
+  width:30%;
+}
 
 /* ****************************************** */
 /* Progress Circle Animation w/jQuery Library */ 
